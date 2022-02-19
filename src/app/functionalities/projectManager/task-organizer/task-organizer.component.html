@@ -1,3 +1,41 @@
-<div class="example-box" cdkDrag>
-    Drag me around
-  </div>
+<div class="example-container">
+    <h2>To do</h2>
+
+    <div
+        cdkDropList
+        #todoList="cdkDropList"
+        [cdkDropListData]="todo"
+        [cdkDropListConnectedTo]="[doneList, progressList]"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        <div id="{{item.id}}" class="example-box {{item.color}}" *ngFor="let item of todo" cdkDrag (click)="openThis(item.id)">{{item.title}}</div>
+    </div>
+</div>
+
+<div class="example-container">
+    <h2>In progress</h2>
+
+    <div
+        cdkDropList
+        #progressList="cdkDropList"
+        [cdkDropListData]="progress"
+        [cdkDropListConnectedTo]="[doneList, todoList]"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        <div id="{{item.id}}" class="example-box {{item.color}}" *ngFor="let item of progress" cdkDrag (click)="openThis(item.id)">{{item.title}}</div>
+    </div>
+</div>
+
+<div class="example-container">
+    <h2>Done</h2>
+
+    <div
+        cdkDropList
+        #doneList="cdkDropList"
+        [cdkDropListData]="done"
+        [cdkDropListConnectedTo]="[todoList, progressList]"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        <div id="{{item.id}}" class="example-box {{item.color}}" *ngFor="let item of done" cdkDrag (click)="openThis(item.id)">{{item.title}}</div>
+    </div>
+</div>
