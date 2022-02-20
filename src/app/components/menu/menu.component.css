@@ -1,0 +1,259 @@
+.top-bar {
+    top: 0;
+    height: 60px;
+    background: #219F94;
+    width: 100%;
+    color: white;
+    position: fixed;
+    z-index: 3;
+}
+
+.top-bar-profile {
+    background: #219F94;
+    position: fixed;
+    height: 90px;
+    width: 155px;
+}
+
+.top-bar-profile-photo {
+    position: fixed;
+    top: 10px;
+    left: 20px;
+    height: 70px;
+    width: 70px;
+    object-fit: cover;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 1px white solid;
+}
+
+.top-bar-profile-photo:hover {
+    filter: brightness(1.2);
+}
+
+.top-bar-profile-corner {
+    left: 155px;
+    background: #219F94;
+    position: fixed;
+    height: 90px;
+    width: 90px;
+    background: linear-gradient(135deg, #219F94 50%, transparent 50%);
+}
+
+.top-bar-menu {
+    position: fixed;
+    margin-left: 185px;
+}
+
+.top-bar-menu-item {
+    height: 60px;
+    float: left;
+    font-size: 22px;
+    padding: 15px 30px;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.top-bar-menu-item:hover {
+    background: white;
+    color: #219F94;
+}
+
+.profile-menu {
+    position: fixed;
+    background: white;
+    width: 150px;
+    padding-top: 29px;
+    top: -60px;
+    z-index: 2;
+    left: 5px;
+    border: 1px solid #DDD;
+}
+
+.profile-menu-item {
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.4s;
+    border-bottom: 1px solid #DDD;
+} 
+
+.profile-menu-item:hover {
+    background: #DDD;
+}
+
+.profile-menu-item:last-child {
+    background: red;
+    color: white;
+    border: none;
+}
+
+.profile-menu-item:last-child:hover {
+    background: darkred;
+}
+
+.left-bar {
+    background: #999;
+    width: 300px;
+    height: 100vh;
+    position: fixed;
+    left: -250px;
+    top: 60px;
+    padding-top: 30px;
+}
+
+.left-bar-btn {
+    font-size: 30px;
+    color: white;
+    float: right;
+}
+
+
+.top-bar-profile-photo.anim-open {
+    -webkit-animation-name: openRotationAnimation;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-fill-mode: forwards;
+    animation-name: openRotationAnimation;
+    animation-duration: 0.4s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+    @keyframes openRotationAnimation {
+        from {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+        to {
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+        }
+    }
+
+
+.top-bar-profile-photo.anim-close {
+    -webkit-animation-name: closeRotationAnimation;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-fill-mode: forwards;
+    animation-name: closeRotationAnimation;
+    animation-duration: 0.4s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+    @keyframes closeRotationAnimation {
+        from {
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+        }
+        to {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+    }
+
+
+.profile-menu.anim-open {
+    -webkit-animation-name: openSlideDownAnimation;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-fill-mode: forwards;
+    animation-name: openSlideDownAnimation;
+    animation-duration: 0.4s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+    @keyframes openSlideDownAnimation {
+        from {
+            -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+        }
+        to {
+            -webkit-transform: translate(0px, 120px);
+            transform: translate(0px, 120px);
+        }
+    }
+
+
+.profile-menu.anim-close {
+    -webkit-animation-name: closeSlideDownAnimation;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-fill-mode: forwards;
+    animation-name: closeSlideDownAnimation;
+    animation-duration: 0.4s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+    @keyframes closeSlideDownAnimation {
+        from {
+            -webkit-transform: translate(0px, 120px);
+            transform: translate(0px, 120px);
+        }
+        to {
+            -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+        }
+    }  
+
+
+
+.left-bar.anim-open {
+    -webkit-animation-name: openSlideRightAnimation;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-fill-mode: forwards;
+    animation-name: openSlideRightAnimation;
+    animation-duration: 0.4s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+    @keyframes openSlideRightAnimation {
+        from {
+            -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+        }
+        to {
+            -webkit-transform: translate(250px, 0px);
+            transform: translate(250px, 0px);
+        }
+    }
+
+
+.left-bar.anim-close {
+    -webkit-animation-name: closeSlideRightAnimation;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-fill-mode: forwards;
+    animation-name: closeSlideRightAnimation;
+    animation-duration: 0.4s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+    @keyframes closeSlideRightAnimation {
+        from {
+            -webkit-transform: translate(250px, 0px);
+            transform: translate(250px, 0px);
+        }
+        to {
+            -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+        }
+    }  

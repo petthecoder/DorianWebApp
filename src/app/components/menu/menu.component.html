@@ -1,0 +1,19 @@
+<div class="top-bar">
+    <div class="top-bar-profile">
+        <img id="top-bar-profile-photo" class="top-bar-profile-photo" src="{{profilePhoto}}" (click)="clickProfile()">
+    </div>
+    <div class="top-bar-profile-corner"></div>
+    <div class="top-bar-menu">
+        <div class="top-bar-menu-item" *ngFor="let item of menuItems" routerLink="{{item.link}}">
+            {{item.text}}
+        </div>
+    </div>
+</div>
+<div id="profile-menu" class="profile-menu">
+    <div class="profile-menu-item">My profile</div>
+    <div class="profile-menu-item">Configuration</div>
+    <div class="profile-menu-item">Log out</div>
+</div>
+<div id="left-bar" class="left-bar">
+    <div class="left-bar-btn" (click)="openLeftMenu()">></div>
+</div>

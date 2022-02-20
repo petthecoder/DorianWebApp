@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ConfigurationService } from './services/configuration.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'DorianWebApp';
+
+  constructor(private configurationService: ConfigurationService){
+    this.configurationService.loadConfig();
+    this.configurationService.applyConfig();
+  }
 }

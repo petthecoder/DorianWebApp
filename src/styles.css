@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+#main-content {
+    margin-top: 90px;
+    margin-left: 50px;
+    transition: margin 0.4s;
+}
+
+#main-content.open {
+    margin-left: 300px;
+}

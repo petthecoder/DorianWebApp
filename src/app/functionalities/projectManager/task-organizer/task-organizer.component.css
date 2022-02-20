@@ -51,8 +51,8 @@
   }
 
   .cdk-drop-list-dragging{
-    background: #DDD;
     transition: 0.3s;
+    background: var(--background);
   }
 
   .red {
